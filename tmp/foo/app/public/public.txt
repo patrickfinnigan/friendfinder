@@ -1,0 +1,2 @@
+the public file will contain all of our html data that will be shown to the person accessing the website
+we store the html files here, and using the routing files, deliver them to the front-end

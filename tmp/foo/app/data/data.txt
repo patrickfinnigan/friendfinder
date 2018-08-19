@@ -1,0 +1,2 @@
+the data file will hold all the data we will be storing on our server
+normally a database system is used for this job, but since the assignemnt doesnt call for one, we will be using a js file instead
