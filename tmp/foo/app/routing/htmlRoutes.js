@@ -3,7 +3,7 @@
 var path = require("path");
 // the path package simple makes delivering pages easier using express
 
-console.log("html routing is avalible")
+
 
 
 // these are the routes we will use. they will tell the server which pages to display based on the url

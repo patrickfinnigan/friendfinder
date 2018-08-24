@@ -10,13 +10,13 @@ module.exports = function (app) {
   // here, we tell the app to get something
   // we tell it to get something when the website path is "/api/friends"
   // if that is the case, the function activates...
-  app.get("/api/friends", function(req, res) {
+  app.get("/api/friends", function (req, res) {
     // ... and it tells the app to result in the import freidns variable, which, remember, is actually our friend.js file
     // then it converts that data into a json form because that helps for reasons that i still dont really get and at this point ill look like an idiot for asking
     res.json(friends);
   })
 
-  app.post("/api/friends", function(req, res) {
+  app.post("/api/friends", function (req, res) {
 
     // the following code is used to determine who has the closest answers to the users answers
     // this code is not important to understanding how to route data through express so one wonders why we have to do this but that us life my droogs 
@@ -32,6 +32,7 @@ module.exports = function (app) {
 
     // next thing we do is create these two variables that will take the req.body coming from the user
     var userData = req.body;
+    console.log(userData);
     // .. then we grab the score data from THAT variable and assign it to its own varable called userScores
     var userScores = userData.scores;
     //essentially, what we are doing here is isolating the user scores from the rest of the body data
@@ -46,7 +47,7 @@ module.exports = function (app) {
     for (let i = 0; i < friends.length; i++) {
       console.log(friends[i]);
       totalDifference = 0;
-      
+
       //then we make ANOTHER forloop to take every instance of that loop, 
       // and lop over the scores within each element of the array that the main forloop is looping through
       //for every friends[i] element that the i forloop goes through, the j forloop will take that element
@@ -59,7 +60,7 @@ module.exports = function (app) {
         // ... in every instance of the the i forloop...
         // for each friend we loop over, we get a summed number...
         totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
-        
+
         if (totalDifference <= bestMatch.friendDifference) {
           //... which we then use here!
           // here, we take the new total difference anc compare it with the current "bestMatch.friendDifference" property
